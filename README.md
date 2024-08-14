@@ -40,6 +40,7 @@ Use the `BLANK_README.md` to get started.
 [![MongoDB][MongoDB-logo]][MongoDB-url]
 [![Mongoose][Mongoose-logo]][Mongoose-url]
 [![Postman][Postman-logo]][Postman-url]
+[![Figma][Figma-logo]][Figma-url]
 
 ## Getting Started
 
@@ -82,3 +83,6 @@ This is an example of how to list things you need to use the software and how to
 
 [Postman-logo]: https://img.shields.io/badge/Postman-E86837?style=for-the-badge&logo=Postman&logoColor=white
 [Postman-url]: https://www.postman.com/
+
+[Figma-logo]: https://img.shields.io/badge/Figma-a259ff?style=for-the-badge&logo=Figma&logoColor=1abcfe
+[Figma-url]: https://www.figma.com/
