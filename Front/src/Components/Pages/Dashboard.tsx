@@ -92,7 +92,7 @@ export default function App() {
 
                                 <div>
                                     <div className="flex flex-col lg:flex-row py-4 gap-4 ">
-                                        <div className="flex flex-col lg:w-7/12  xl:px-24 pt-16 text-center justify-between gap-4 lg:gap-0">
+                                        <div className="flex flex-col lg:w-7/12  xl:px-12 pt-16 text-center justify-between gap-4 lg:gap-0">
 
                                             <p className='text-4xl'>Welcome {sessionStorage.getItem("email") !== null && sessionStorage.getItem("email")}.</p>
 
@@ -112,7 +112,7 @@ export default function App() {
 
                                         <hr className="lg:hidden border-2 my-4" />
 
-                                        <div className="lg:w-5/12 xl:w-4/12">
+                                        <div className="lg:w-5/12">
                                             <div className="text-center text-2xl pb-3">Your Transactions:</div>
                                             <div className="border-[#b6b6b6] border-3 border-opacity-25 ">
                                                 <Table updates={updates} setUpdates={setUpdates} />

@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 
+require('dotenv').config();
+
 const corsOptions = require('./config/corsOptions');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
@@ -14,10 +16,11 @@ var cron = require('node-cron');
 const removeUnverifiedUsers = require('./utils/removeUnverifiedUsers')
 
 
+
 // Connect to database
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB = "mongodb+srv://chenbrilling1:1234@chencluster.b5ne8ew.mongodb.net/bank?retryWrites=true&w=majority&appName=ChenCluster";
+const mongoDB = process.env.DATABASE_URL;
 mongoose.connect(mongoDB);
 
 
