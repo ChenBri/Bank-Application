@@ -1,0 +1,47 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+    background-color: #e5e5e5;
+    /* overflow: hidden; */
+}
+
+.rainbow-grad {
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media screen and (min-width: 960px) {
+    html {
+        margin-left: calc(100vw - 100%);
+        margin-right: 0;
+    }
+}
+
+@layer components {
+    .button-bg{
+        @apply color-[#dc4c64];
+    }
+    .colorful-button {
+        @apply rainbow-grad mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase text-white shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+    }
+
+    .empty-button {
+        @apply inline-block rounded border-2 px-6 pb-1.5 pt-2 text-xs font-medium uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 w-min border-[#dc4c64] text-[#dc4c64] hover:bg-[#dc4c64] hover:text-white transition-all duration-1000;
+    }
+
+    .jump-animation {
+        @apply animate-jump-in animate-once animate-duration-[1500ms] animate-delay-100 animate-ease-in animate-normal animate-fill-forwards;
+    }
+
+    .fade-up {
+        @apply animate-fade-up animate-once animate-duration-[1000ms] animate-ease-out animate-fill-forwards;
+    }
+
+    .jump-in {
+        @apply animate-jump-in animate-once animate-duration-[500ms];
+    }
+
+    
+
+}

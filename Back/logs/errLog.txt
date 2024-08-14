@@ -1,0 +1,52 @@
+20240620	11:53:08	5bb651c9-911f-4e96-8d51-3f7204a1d56f	TypeError: registerUser is not a function
+20240620	11:53:48	f85d1178-31de-45bf-88eb-e5dc312572a5	SyntaxError: Unexpected token 'export'
+20240620	11:54:15	638bcaf6-f594-4548-8710-b326e62cf0ae	TypeError: registerUser.registerUser is not a function
+20240620	11:56:32	f607eb6d-f5e7-427e-ba2e-7e93250a363b	SyntaxError: await is only valid in async functions and the top level bodies of modules
+20240620	16:08:33	2e65e4f9-088c-447f-85e6-e01e93eed40b	TypeError: Cannot read properties of undefined (reading 'authorization')
+20240620	16:08:38	192a6a0c-c7ab-4a9a-a35c-47436a0aa485	TypeError: Cannot read properties of undefined (reading 'authorization')
+20240620	16:13:28	779407f7-ccdc-43f8-bfec-9bbfe0b5e544	TypeError: Cannot read properties of undefined (reading 'email')
+20240623	12:18:07	9781cf53-df58-46bf-822b-fbb9e38237f8	SyntaxError: Expected ',' or '}' after property value in JSON at position 65
+20240624	15:02:50	0832121f-7500-4b75-8ed8-33b73c329f07	Error: Not allowed by CORS
+20240625	10:36:35	ba08a258-f6c7-467e-b24f-d9234f99ddb1	TypeError: res.setHeader is not a function
+20240625	10:36:35	8814d55c-9325-4b4c-9d34-0d588fba5a8c	TypeError: res.setHeader is not a function
+20240625	10:36:35	982021c6-2cf9-418a-a3ae-a72f53945a30	TypeError: res.setHeader is not a function
+20240625	10:36:56	6f55f007-50f1-4561-8f0d-5d9f28bee5c7	TypeError: res.setHeader is not a function
+20240625	10:37:09	09613288-a9a4-41f1-b4fd-9047635bfaad	TypeError: res.setHeader is not a function
+20240625	10:37:11	5b0934c2-0119-42b4-9d10-ef115a6f1a19	TypeError: res.setHeader is not a function
+20240625	10:37:11	4a99f60c-4b2c-4d78-b157-b4a8f07d23f7	TypeError: res.setHeader is not a function
+20240625	10:37:11	e28a402b-ff1e-4bea-8967-91667444f35b	TypeError: res.setHeader is not a function
+20240625	10:37:19	273b8629-fdcf-4f24-ae0f-310fbc8410e4	TypeError: res.setHeader is not a function
+20240625	10:37:19	8957799a-3e9a-4f33-a2f0-1ce268d8124e	TypeError: res.setHeader is not a function
+20240625	10:37:19	062e6103-eff5-4dee-bc58-9d67204cfce5	TypeError: res.setHeader is not a function
+20240625	10:41:06	4a2af208-3e1c-41b9-aff6-ede1fa6d0e43	TypeError: res.setHeader is not a function
+20240625	10:41:06	50763758-20d5-4167-a04e-b5e158ea5461	TypeError: res.setHeader is not a function
+20240625	10:41:06	26ba7c8e-2d76-4563-adff-e2b032365216	TypeError: res.setHeader is not a function
+20240625	10:42:23	47384370-2b06-4f09-9176-5cf375d0d65a	TypeError: res.setHeader is not a function
+20240625	10:42:23	8928a2b7-ea7e-4194-b48c-21d23ebc8b2e	TypeError: res.setHeader is not a function
+20240625	10:42:27	b14819df-16ab-45b8-bb7c-db809b5ed6c1	TypeError: res.setHeader is not a function
+20240625	10:42:27	1ce8e129-8ac1-4e68-9ab8-91390947b8ca	TypeError: res.setHeader is not a function
+20240625	10:42:37	79d71a91-4a59-45fb-a591-d3069baf3bce	TypeError: res.setHeader is not a function
+20240625	10:42:37	15247442-2c66-433d-a977-7a96e8540c98	TypeError: res.setHeader is not a function
+20240625	10:42:37	1c2b0cf9-cb81-485d-9938-cf54bba4cf0b	TypeError: res.setHeader is not a function
+20240625	10:43:07	7c617bbb-aa48-4a31-a90b-d26a7c3fd644	TypeError: res.setHeader is not a function
+20240625	10:43:07	e46c5d5a-e105-462b-8998-a28c2cf088d5	TypeError: res.setHeader is not a function
+20240625	10:43:16	d63a13fc-05c8-4b56-a54b-6be6b70d90d0	TypeError: res.setHeader is not a function
+20240625	10:43:16	deacc3bd-c072-411e-a840-0473f0561ba0	TypeError: res.setHeader is not a function
+20240625	10:43:16	d77cc459-2ec4-4a20-a21e-104f24606f69	TypeError: res.setHeader is not a function
+20240625	10:43:28	ab7c34c8-ddf0-4844-9508-927fefb3a358	TypeError: res.setHeader is not a function
+20240625	10:44:04	dc5f15ee-a8c4-486d-a50c-f5323dc9d33a	TypeError: res.setHeader is not a function
+20240625	10:44:52	9a2c4c96-46f2-427b-b5f8-a776c50f93f7	TypeError: res.setHeader is not a function
+20240625	10:45:56	5c4c66bf-c938-4f41-bdb9-3e0a5a767279	TypeError: res.setHeader is not a function
+20240625	10:46:11	d013b91f-8d89-4d57-832e-9754829b168a	TypeError: res.setHeader is not a function
+20240625	10:46:26	92c878e3-16f9-48e6-8322-f63f719e6fce	TypeError: res.setHeader is not a function
+20240625	10:46:31	1930ca53-ed45-47b4-8ab2-580a8f552887	TypeError: res.setHeader is not a function
+20240625	10:48:24	82045049-7e4b-4c3a-a692-98f31448c4ae	TypeError: res.setHeader is not a function
+20240625	10:48:47	e7aaefe2-ede2-4553-be3d-a0d734d31073	TypeError: res.setHeader is not a function
+20240625	10:49:49	b7dedc9e-3ffd-4e49-93dc-3ca374c52e3d	TypeError: res.setHeader is not a function
+20240625	10:49:50	bfc60dc3-5a65-49e4-9da9-16a2454d8082	TypeError: res.setHeader is not a function
+20240625	10:49:51	f68ae2ad-00bc-4162-bca0-5f65d7dde6c1	TypeError: res.setHeader is not a function
+20240625	10:50:07	d6a94e7b-8233-4eca-bb8a-dd1835fe3bb3	TypeError: res.setHeader is not a function
+20240625	10:50:07	a3ddb195-9427-4bd5-b40c-75552d2e42e9	TypeError: res.setHeader is not a function
+20240625	10:50:30	aec3ce40-309a-4fba-8da7-464dba4e6fdf	TypeError: res.setHeader is not a function
+20240625	10:50:41	0e409d3d-b6e7-492f-9e72-c6aef175df0d	TypeError: res.setHeader is not a function
+20240625	10:51:46	de38be08-695f-49d3-bcf0-a53ef5be6f45	TypeError: res.setHeader is not a function
