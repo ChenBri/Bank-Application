@@ -39,7 +39,7 @@ Use the `BLANK_README.md` to get started.
 [![Swagger][Swagger-logo]][Swagger-url]
 [![MongoDB][MongoDB-logo]][MongoDB-url]
 [![Mongoose][Mongoose-logo]][Mongoose-url]
-
+[![Postman][Postman-logo]][Postman-url]
 
 ## Getting Started
 
@@ -79,3 +79,6 @@ This is an example of how to list things you need to use the software and how to
 
 [Mongoose-logo]: https://img.shields.io/badge/Mongoose-881100?style=for-the-badge&logo=Mongoose&logoColor=white
 [Mongoose-url]: https://mongoosejs.com/
+
+[Postman-logo]: https://img.shields.io/badge/Postman-E86837?style=for-the-badge&logo=Postman&logoColor=white
+[Postman-url]: https://www.postman.com/
