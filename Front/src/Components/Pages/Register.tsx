@@ -16,18 +16,21 @@ export default function App() {
 
     const navigate = useNavigate();
 
-    const [isError, setIsError] = useState(false);
-    const[isValid, setIsValid] = useState(false);
+    const [isError, setIsError] = useState<boolean>(false);
+    const[isValid, setIsValid] = useState<boolean>(false);
 
-    const [message, setMessage] = useState("");
+    const [message, setMessage] = useState<string>("");
 
-    let emailRef = useRef<any>("");
-    let passwordRef = useRef<any>("");
-    let verifyPasswordRef = useRef<any>("");
-    let phoneRef = useRef<any>("");
+    let emailRef = useRef<HTMLInputElement>(null);
+    let passwordRef = useRef<HTMLInputElement>(null);
+    let verifyPasswordRef = useRef<HTMLInputElement>(null);
+    let phoneRef = useRef<HTMLInputElement>(null);
 
 
     async function handleSubmit() {
+
+        if (!emailRef.current || !passwordRef.current || !verifyPasswordRef.current || !phoneRef.current) return;
+
         let email: string = emailRef.current.value;
         let password: string = passwordRef.current.value;
         let verifyPassword: string = verifyPasswordRef.current.value;

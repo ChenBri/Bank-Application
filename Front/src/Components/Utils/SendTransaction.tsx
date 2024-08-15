@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import api from '../../axiosUtils';
 import {  TextField } from '@mui/material';
 import Button from './Button';
+import { AxiosResponse } from 'axios';
 
 interface Transaction {
     reciever: string;
@@ -19,10 +20,13 @@ interface SendProps {
 
 export default function App({ updateTransactions, balance, setIsError, setIsValid, setMessage }: SendProps) {
 
-    let recieverRef = useRef<any>("");
-    let amountRef = useRef<any>(0);
+    const recieverRef = useRef<HTMLInputElement>(null);
+    const amountRef = useRef<HTMLInputElement>(null);
 
     async function handleSend() {
+
+        if (!recieverRef.current || !amountRef.current) return;
+
         const transaction: Transaction = {
             reciever: recieverRef.current.value,
             amount: Number(amountRef.current.value),
@@ -33,7 +37,7 @@ export default function App({ updateTransactions, balance, setIsError, setIsVali
                 setMessage(response.data.success);
                 setIsValid(true);
             })
-            .catch(function (error: any) {
+            .catch(function (error) {
                 setMessage(error.response.data.error);
                 setIsError(true);
             });

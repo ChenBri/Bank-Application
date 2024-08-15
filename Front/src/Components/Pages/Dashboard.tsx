@@ -11,12 +11,12 @@ import Button from '../Utils/Button';
 export default function App() {
     const navigate = useNavigate();
 
-    const [updates, setUpdates] = useState<any>([]);
-    const [balance, setBalance] = useState(0);
+    const [updates, setUpdates] = useState<Object>([]);
+    const [balance, setBalance] = useState<number>(0);
 
-    const [isError, setIsError] = useState(false);
-    const [isValid, setIsValid] = useState(false);
-    const [message, setMessage] = useState("");
+    const [isError, setIsError] = useState<boolean>(false);
+    const [isValid, setIsValid] = useState<boolean>(false);
+    const [message, setMessage] = useState<string>("");
 
     useEffect(() => {
         updateTransactions();
@@ -29,7 +29,7 @@ export default function App() {
             .then(function (response: any) {
                 setUpdates(response.data);
             })
-            .catch(function (error: any) {
+            .catch(function (error) {
                 setMessage(error.response.data.error);
                 setIsError(true);
             });
@@ -38,7 +38,7 @@ export default function App() {
             .then(function (response: any) {
                 setBalance(response.data.amount);
             })
-            .catch(function (error: any) {
+            .catch(function (error) {
                 setMessage(error.response.data.error);
                 setIsError(true);
             });
@@ -53,7 +53,7 @@ export default function App() {
                 sessionStorage.removeItem("email");
                 navigate('/');
             })
-            .catch(function (error: any) {
+            .catch(function (error) {
                 setMessage(error.response.data.error);
                 setIsError(true);
             });

@@ -13,18 +13,19 @@ interface Login {
 
 export default function App() {
 
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState<boolean>(false);
 
-    const [isError, setIsError] = useState(false);
-    const [isValid, setIsValid] = useState(false);
-    const [message, setMessage] = useState("");
+    const [isError, setIsError] = useState<boolean>(false);
+    const [isValid, setIsValid] = useState<boolean>(false);
+    const [message, setMessage] = useState<string>("");
 
     const navigate = useNavigate();
 
-    let emailRef = useRef<any>("");
-    let passwordRef = useRef<any>("");
+    let emailRef = useRef<HTMLInputElement>(null);
+    let passwordRef = useRef<HTMLInputElement>(null);
 
     async function handleLogin() {
+        if(!emailRef.current || !passwordRef.current) return;
         let email: string = emailRef.current.value;
         let password: string = passwordRef.current.value;
 
@@ -52,7 +53,7 @@ export default function App() {
                 setMessage(response.data.success);
                 setIsValid(true);
             })
-            .catch(function (error: any) {
+            .catch(function (error) {
                 setMessage(error.response.data.error);
                 setIsError(true);
             });
