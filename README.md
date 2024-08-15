@@ -72,7 +72,9 @@ The website is fully responsive, with TailwindCSS as the primary styling framewo
 Before you begin, ensure you have the following installed on your machine:
 
 Node.js: The project is built using Node.js, so you'll need to have it installed.
-npm: Node Package Manager is included with Node.js. Ensure you have the latest version installed by running:
+
+npm: Node Package Manager is included with Node.js. 
+Ensure you have the latest version installed by running:
 ```sh
 npm install npm@latest -g
 ```
