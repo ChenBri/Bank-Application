@@ -15,9 +15,15 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<div align="center">
+<a href="./Preview/LoginPage.png">
+    <img src="./Preview/LoginPage.png" alt="Logo">
+</a>
+</div>
 
 This project allows users to register for a banking service with secure authentication and verification. Once registered, users can send payments to other users on the platform and view a list of their most recent transactions.
+
+
 
 ### The project is divided into three main components:
 
@@ -42,7 +48,11 @@ The frontend communicates with the backend via Axios for all API requests. When 
 
 The website is fully responsive, with TailwindCSS as the primary styling framework.
 
-
+<div align="center">
+<a href="./Preview/DashboardResponsive.png" >
+    <img src="./Preview/DashboardResponsive.png" alt="Logo">
+</a>
+</div>
 
 ## Built With
 [![React][React-logo]][React-url]
