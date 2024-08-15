@@ -26,7 +26,7 @@ This project allows users to register for a banking service with secure authenti
 3. **Database**: MongoDB, integrated through the Mongoose driver.
 The backend exposes a RESTful API, which was designed using Swagger and tested with Postman. The API includes the following endpoints:
 
-### RestFUL API:
+### REST API:
 * **register** (POST): Registers a new user with email and password.
 * **balance** (GET): Retrieves the current balance of the authenticated user.
 * **authenticate** (GET): Verifies the email and password, then stores the JWT in cookies.
