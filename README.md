@@ -8,7 +8,7 @@
   <h3 align="center">Chen's Bank</h3>
 
   <p align="center">
-    A Full-stack project that let users...
+    This project allows users to register for a banking service with secure authentication and verification. Once registered, users can send payments to other users on the platform and view a their transactions.
   </p>
 </div>
 
@@ -17,16 +17,30 @@
 ## About The Project
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This project allows users to register for a banking service with secure authentication and verification. Once registered, users can send payments to other users on the platform and view a list of their most recent transactions.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+### The project is divided into three main components:
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+1. **Frontend**: Built using React, TypeScript, MaterialUI, and TailwindCSS.
+2. **Backend**: Developed with Express (Node.js) and includes Nodemailer for sending custom emails, NodeCron for scheduled tasks, and Mongoose for MongoDB interactions.
+3. **Database**: MongoDB, integrated through the Mongoose driver.
+The backend exposes a RESTful API, which was designed using Swagger and tested with Postman. The API includes the following endpoints:
 
-Use the `BLANK_README.md` to get started.
+### RestFUL API:
+* **register** (POST): Registers a new user with email and password.
+* **balance** (GET): Retrieves the current balance of the authenticated user.
+* **authenticate** (GET): Verifies the email and password, then stores the JWT in cookies.
+* **transactions** (GET/POST): Retrieves the list of transactions or records new ones.
+* **verify** (POST): Confirms the user's email using a verification code sent via email.
+* **status** (GET): Checks the server status.
+* **logout** (DELETE): Removes the JWT token from the cookies.
+
+All critical operations, such as transactions and balance retrieval, are validated on the backend by checking the JWT's authenticity.
+
+### Overview:
+The frontend communicates with the backend via Axios for all API requests. When a user registers, an email is sent to their address using Nodemailer, containing a verification link that remains valid for 24 hours. In the backend, a cron job runs every few hours to delete unverified email addresses that are older than 24 hours.
+
+The website is fully responsive, with TailwindCSS as the primary styling framework.
 
 
 
@@ -44,17 +58,43 @@ Use the `BLANK_README.md` to get started.
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
 
-## Prerequisites
+Before you begin, ensure you have the following installed on your machine:
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Node.js: The project is built using Node.js, so you'll need to have it installed.
+npm: Node Package Manager is included with Node.js. Ensure you have the latest version installed by running:
+```sh
+npm install npm@latest -g
+```
 
+```sh
+git clone https://github.com/your-username/chen-bank.git
+```
+Navigate to the project directory:
+
+```sh
+cd chen-bank
+npm install
+```
+
+### Create a .env file
+Create a .env file in the root directory and add the necessary environment variables for MongoDB connection, JWT secret, email credentials for Nodemailer, etc. Example:
+
+```
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_email_password
+```
+
+### Run the application:
+
+To start both the frontend and backend, you can use the following command:
+
+```sh
+npm start
+```
+The frontend should now be running on http://localhost:3000, and the backend on http://localhost:5000.
 
 
 [React-logo]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
