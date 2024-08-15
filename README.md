@@ -8,7 +8,7 @@
   <h3 align="center">Chen's Bank</h3>
 
   <p align="center">
-    This project allows users to register for a banking service with secure authentication and verification. Once registered, users can send payments to other users on the platform and view a their transactions.
+    This project allows users to register for a banking service with secure authentication and verification. Once registered, users can send payments to other users on the platform and view their transactions.
   </p>
 </div>
 
