@@ -54,10 +54,9 @@ app.use('/api/transactions', require('./routes/api/transactions'));
 app.use('/api/logout', require('./routes/api/logout'));
 app.use('/api/verify', require('./routes/api/verify'));
 
-/* 
+
 app.use('/api/admin/register', require('./routes/api/admin/register'));
-app.use('/api/admin/users/:userid', require('./routes/api/admin/register')); 
-*/
+/* app.use('/api/admin/users/:userid', require('./routes/api/admin/register'));  */
 
 app.all('*', (req, res) => {
     res.status(404);
