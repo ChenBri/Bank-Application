@@ -24,10 +24,11 @@ const authenticate = async (req, res) => {
         }
 
         const accessToken = jwt.sign(
-            { "email": foundUser.email },
+            { "email": foundUser.email, "role": foundUser.role },
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: '60m' });
 
+        console.log(accessToken);
         res.cookie('jwt', accessToken, { httpOnly: true, maxAge: 60 * 60 * 1000 });
         res.json({ "success": "Logged it.", jwt: accessToken });
 
