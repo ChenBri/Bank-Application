@@ -1,0 +1,27 @@
+version: '3.8'
+
+# Services
+services:
+  # Server service
+  server:
+    build:
+      context: ./Back
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "3500:3500"
+
+
+  # Client service
+  client:
+    build:
+      context: ./Front
+      dockerfile: Dockerfile
+
+    container_name: frontend
+    ports:
+      - "3000:3000"
+
+# Volumes define
+volumes: 
+  mydata:
