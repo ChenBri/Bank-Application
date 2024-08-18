@@ -20,9 +20,13 @@ const Users = new Schema({
     },
     is_activated: {
         type: Boolean
+    },
+    role: {
+        type: String,
+        enum: ["admin", "user"],
+        default: "user",
+        required: true
     }
 }, { timestamps: true });
 
-
 module.exports = mongoose.model("Users", Users);
-
