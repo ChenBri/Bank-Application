@@ -48,8 +48,6 @@ export default function GetUserEvent() {
                 onChange={getUser}
             />
 
-            <Button type="button" classes="btn btn-blue" method={test} text="Test" />
-
             <UserTable users={users} />
         </>
     );
