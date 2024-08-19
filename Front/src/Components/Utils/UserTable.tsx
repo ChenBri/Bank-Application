@@ -9,10 +9,11 @@ import Paper from '@mui/material/Paper';
 
 
 
-export default function UserTable({users} : any) {
+export default function UserTable({ users }: any) {
+
     return (
         <TableContainer component={Paper}>
-            <Table  aria-label="simple table">
+            <Table aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell>ID</TableCell>
@@ -25,9 +26,10 @@ export default function UserTable({users} : any) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {users.map(({createdAt, email, is_activated, phone, role, updatedAt, _id} : any) => (
+                    {users.map(({ createdAt, email, is_activated, phone, role, updatedAt, _id }: any) => (
                         <TableRow
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                            key={_id}
                         >
                             <TableCell>{_id}</TableCell>
                             <TableCell>{createdAt}</TableCell>
@@ -36,7 +38,7 @@ export default function UserTable({users} : any) {
                             <TableCell>{phone}</TableCell>
                             <TableCell>{is_activated ? "True" : "False"}</TableCell>
                             <TableCell>{role}</TableCell>
-                            
+
                         </TableRow>
                     ))}
                 </TableBody>
