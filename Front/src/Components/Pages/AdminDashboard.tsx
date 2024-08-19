@@ -17,7 +17,7 @@ import { useState } from 'react';
 import MainEvent from './AdminEvents/MainEvent';
 import GetUsers from './AdminEvents/GetUsersEvent';
 import GetUser from './AdminEvents/GetUserEvent';
-import format from './../../formattingUtils' ;
+import format from './../../formattingUtils';
 import IconResolver from './AdminEvents/IconResolver';
 
 import events from './AdminEvents/events.json';
@@ -32,27 +32,22 @@ export default function ResponsiveDrawer() {
         setCurrentEvent(e);
     }
 
-    
-        
+
+
 
     const drawer = (
         <div>
             <Toolbar />
 
             <Divider />
-            
+
             <List>
                 {events.map(({ text, operation, iconName }: any) => (
                     <ListItem key={text} disablePadding onClick={() => handleClick(operation)}>
                         <ListItemButton>
-
-                            
                             <ListItemIcon>
-                            <IconResolver iconName={iconName}/>
-                            </ListItemIcon>
-                            
-                            
-
+                                  <IconResolver iconName={iconName} />
+                                </ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItemButton>
                     </ListItem>

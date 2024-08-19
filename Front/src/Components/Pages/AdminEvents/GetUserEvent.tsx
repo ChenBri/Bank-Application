@@ -4,7 +4,7 @@ export default function GetUserEvent() {
     return (
         <>
             <div>Get User</div >
-            <Button type="button" classes="empty-button" method={() => console.log("Get User Event")} text="Test" />
+            <Button type="button" classes="empty-button" method={() => console.log("Get User Event")} text="Refresh" />
         </>
     )
 }
