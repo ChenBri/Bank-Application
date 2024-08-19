@@ -30,7 +30,7 @@ const authenticate = async (req, res) => {
 
         console.log(accessToken);
         res.cookie('jwt', accessToken, { httpOnly: true, maxAge: 60 * 60 * 1000 });
-        res.json({ "success": "Logged it.", jwt: accessToken });
+        res.json({ "success": "Logged it.", jwt: accessToken, role: foundUser.role });
 
     } else {
         return res.status(401).json({ 'error': 'Wrong password.' });
