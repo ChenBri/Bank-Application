@@ -34,10 +34,6 @@ export default function GetUserEvent() {
             });
     }
 
-    async function test() {
-        console.log(users);
-    }
-
     return (
         <>
             <TextField
