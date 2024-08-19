@@ -1,0 +1,17 @@
+[
+    {
+        "text": "Main Menu",
+        "operation": "MAIN",
+        "iconName": "Home"
+    },
+    {
+        "text": "Get User",
+        "operation": "GET_USER",
+        "iconName": "Person"
+    },
+    {
+        "text": "Get Users",
+        "operation": "GET_USERS",
+        "iconName": "People"
+    }
+]
