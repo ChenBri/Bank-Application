@@ -54,7 +54,7 @@ app.use('/api/transactions', require('./routes/api/transactions'));
 app.use('/api/logout', require('./routes/api/logout'));
 app.use('/api/verify', require('./routes/api/verify'));
 
-
+// admin routes
 app.use('/api/admin/register', require('./routes/api/admin/register'));
 app.use('/api/admin/users', require('./routes/api/admin/users'));
 
