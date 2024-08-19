@@ -23,6 +23,9 @@
 
 This project allows users to register for a banking service with secure authentication and verification. Once registered, users can send payments to other users on the platform and view a list of their most recent transactions.
 
+The project also includes functionality for admin user registration and operations. Admins can retrieve all required data from the database. To create a new admin user, the system requires a specific secret key, which is stored in environment variables in the backend.
+
+Role-Based Access Control (RBAC) is implemented, differentiating between admin and regular users, with JWT-based authentication and authorization.
 
 
 ### The project is divided into three main components:
@@ -32,16 +35,24 @@ This project allows users to register for a banking service with secure authenti
 3. **Database**: MongoDB, integrated through the Mongoose driver.
 The backend exposes a RESTful API, which was designed using Swagger and tested with Postman. The API includes the following endpoints:
 
-### REST API:
-* **register** (POST): Registers a new user with email and password.
-* **balance** (GET): Retrieves the current balance of the authenticated user.
-* **authenticate** (GET): Verifies the email and password, then stores the JWT in cookies.
-* **transactions** (GET/POST): Retrieves the list of transactions or records new ones.
-* **verify** (POST): Confirms the user's email using a verification code sent via email.
-* **status** (GET): Checks the server status.
-* **logout** (DELETE): Removes the JWT token from the cookies.
+### REST API (User):
+* **/api/register** (POST): Registers a new user with email and password.
+* **/api/balance** (GET): Retrieves the current balance of the authenticated user.
+* **/api/authenticate** (GET): Verifies the email and password, then stores the JWT in cookies.
+* **/api/transactions** (GET/POST): Retrieves the list of transactions or records new ones.
+* **/api/verify** (POST): Confirms the user's email using a verification code sent via email.
+* **/api/status** (GET): Checks the server status.
+* **/api/logout** (DELETE): Removes the JWT token from the cookies.
 
 All critical operations, such as transactions and balance retrieval, are validated on the backend by checking the JWT's authenticity.
+
+### REST API (Admin):
+* **/api/admin/register** (POST): Registers a new admin account using a secret key.
+* **/api/admin/users** (GET): Retrieves all users from the database.
+* **/api/admin/users/:userId** (GET): Retrieves a specific user from the database.
+
+The frontend includes dedicated pages for admin users, featuring an admin registration page and a dashboard for general data retrieval and management.
+
 
 ### Overview:
 The frontend communicates with the backend via Axios for all API requests. When a user registers, an email is sent to their address using Nodemailer, containing a verification link that remains valid for 24 hours. In the backend, a cron job runs every few hours to delete unverified email addresses that are older than 24 hours.
@@ -97,6 +108,7 @@ MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 EMAIL_USER=your_email@example.com
 EMAIL_PASS=your_email_password
+ADMIN_KEY=your_admin_key
 ```
 
 ### Run the application:
