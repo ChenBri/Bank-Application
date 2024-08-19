@@ -16,6 +16,7 @@ export default function App() {
     const [isActive, setIsActive] = useState<boolean>(false);
 
     const [isError, setIsError] = useState<boolean>(false);
+    const [isAdmin, setIsAdmin] = useState<boolean>(false);
     const [isValid, setIsValid] = useState<boolean>(false);
     const [message, setMessage] = useState<string>("");
 
@@ -25,7 +26,7 @@ export default function App() {
     let passwordRef = useRef<HTMLInputElement>(null);
 
     async function handleLogin() {
-        if(!emailRef.current || !passwordRef.current) return;
+        if (!emailRef.current || !passwordRef.current) return;
         let email: string = emailRef.current.value;
         let password: string = passwordRef.current.value;
 
@@ -51,7 +52,16 @@ export default function App() {
                 }
 
                 setMessage(response.data.success);
+
+                const role = response.data.role;
+                console.log("role: ", role);
+                console.log(role === 'admin');
+                if (role === 'admin') {
+                    setIsAdmin(true);
+                    return;
+                }
                 setIsValid(true);
+
             })
             .catch(function (error) {
                 setMessage(error.response.data.error);
@@ -66,13 +76,17 @@ export default function App() {
 
     function handleDashboard() {
         navigate('/dashboard');
-    
+    }
+
+    function handleAdminDashboard() {
+        navigate('/admin-dashboard');
     }
 
     return (
         <>
 
             <MyModal isVisible={isValid} setIsVisible={setIsValid} header="Success" message={message} method={handleDashboard} button="Continue" />
+            <MyModal isVisible={isAdmin} setIsVisible={setIsAdmin} header="Admin Access Granted" message={message} method={handleAdminDashboard} button="Continue" />
             <MyModal isVisible={isError} setIsVisible={setIsError} header="Error" message={message} button="Cancel" />
             <VerificationModal isActive={isActive} setIsActive={setIsActive} />
 
@@ -117,7 +131,7 @@ export default function App() {
                             </div>
                         </div>
 
-                    
+
 
                         {/* Right Side */}
                         <div
@@ -142,7 +156,7 @@ export default function App() {
                         </div>
                     </div>
                 </div>
-               
+
             </section>
         </>
     );

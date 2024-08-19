@@ -15,7 +15,7 @@ import Login from './Components/Pages/Login';
 import Register from './Components/Pages/Register';
 import Dashboard from './Components/Pages/Dashboard';
 import Server from './Components/Utils/Server';
-
+import AdminDashboard from './Components/Pages/AdminDashboard'
 function App() {
 
   initTWE({ Input, Ripple });
@@ -27,6 +27,7 @@ function App() {
           <Route path={"/"} element={<Login />} />
           <Route path={"register"} element={<Register />} />
           <Route path={"dashboard"} element={<Dashboard />} />
+          <Route path={"admin-dashboard"} element={<AdminDashboard />} />
         </Route>
       </Routes>
     </>
