@@ -19,6 +19,7 @@ import MainEvent from './AdminEvents/MainEvent';
 import GetUsers from './AdminEvents/GetUsersEvent';
 import GetUser from './AdminEvents/GetUserEvent';
 import format from './../../formattingUtils' ;
+import IconResolver from './AdminEvents/IconResolver';
 
 
 const drawerWidth = 240;
@@ -35,29 +36,41 @@ export default function ResponsiveDrawer() {
         [
             {
                 text: "Main Menu",
-                operation: "MAIN"
-            },
-            {
-                text: "Get Users",
-                operation: "GET_USERS"
+                operation: "MAIN",
+                iconName: "Home"
             },
             {
                 text: "Get User",
-                operation: "GET_USER"
+                operation: "GET_USER",
+                iconName: "Person"
+            },
+            {
+                text: "Get Users",
+                operation: "GET_USERS",
+                iconName: "People"
             }
         ]
+
+        
 
     const drawer = (
         <div>
             <Toolbar />
+
             <Divider />
+            
             <List>
-                {events.map(({ text, operation }: any) => (
+                {events.map(({ text, operation, iconName }: any) => (
                     <ListItem key={text} disablePadding onClick={() => handleClick(operation)}>
                         <ListItemButton>
+
+                            
                             <ListItemIcon>
-                                <InboxIcon />
+                            <IconResolver iconName={iconName}/>
                             </ListItemIcon>
+                            
+                            
+
                             <ListItemText primary={text} />
                         </ListItemButton>
                     </ListItem>
@@ -81,7 +94,6 @@ export default function ResponsiveDrawer() {
                 <Toolbar>
                     <IconButton
                         color="inherit"
-                        aria-label="open drawer"
                         edge="start"
                         sx={{ mr: 2, display: { sm: 'none' } }}
                     >
