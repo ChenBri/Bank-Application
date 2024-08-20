@@ -17,6 +17,8 @@ export default function UserTable({ data }: UserTableProps) {
         return <div>No data available</div>;
     }
 
+    console.log(data);
+
     // Get the keys from the first user object for table headers
     const headers = Object.keys(data[0]);
 

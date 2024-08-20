@@ -7,18 +7,20 @@ import { TextField } from "@mui/material";
 
 
 export default function GetOne({type} : any) {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<any[]>([]);
     let inputRef = useRef<HTMLInputElement>(null);
 
     async function getData() {
         if (!inputRef.current) return;
-
+    
         await api
             .get(`/admin/${type}/${inputRef.current.value}`)
             .then(function (response: any) {
-                const userResponse = response.data.user;
-                setData(userResponse ? userResponse : []);
-
+                const userResponse = response.data.data;
+    
+                // Check if userResponse is an object, if so, wrap it in an array
+                const formattedData = Array.isArray(userResponse) ? userResponse : [userResponse];
+                setData(formattedData);
             })
             .catch(function (error) {
                 setData([]);
