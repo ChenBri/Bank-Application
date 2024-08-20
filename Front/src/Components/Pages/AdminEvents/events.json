@@ -17,21 +17,21 @@
     {
         "text": "Get Balance",
         "operation": "GET_BALANCE",
-        "iconName": "Money"
+        "iconName": "AccountBalanceWallet"
     },
     {
         "text": "Get Balances",
         "operation": "GET_BALANCES",
-        "iconName": "Money"
+        "iconName": "AccountBalance"
     },
     {
         "text": "Get Transaction",
         "operation": "GET_TRANSACTION",
-        "iconName": "Money"
+        "iconName": "Send"
     },
     {
         "text": "Get Transactions",
         "operation": "GET_TRANSACTIONS",
-        "iconName": "Money"
+        "iconName": "SendAndArchive"
     }
 ]
