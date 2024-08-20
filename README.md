@@ -53,6 +53,11 @@ All critical operations, such as transactions and balance retrieval, are validat
 
 The frontend includes dedicated pages for admin users, featuring an admin registration page and a dashboard for general data retrieval and management.
 
+<div align="center">
+<a href="./Preview/AdminDashboard.png">
+    <img src="./Preview/AdminDashboard.png" alt="Logo">
+</a>
+</div>
 
 ### Overview:
 The frontend communicates with the backend via Axios for all API requests. When a user registers, an email is sent to their address using Nodemailer, containing a verification link that remains valid for 24 hours. In the backend, a cron job runs every few hours to delete unverified email addresses that are older than 24 hours.
