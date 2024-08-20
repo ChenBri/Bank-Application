@@ -15,12 +15,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import MainEvent from './AdminEvents/MainEvent';
-import GetUsers from './AdminEvents/GetUsersEvent';
-import GetUser from './AdminEvents/GetUserEvent';
 import {formatString} from './../../formattingUtils';
 import IconResolver from './AdminEvents/IconResolver';
 
 import events from './AdminEvents/events.json';
+import GetMany from './AdminEvents/GetMany';
+import GetOne from './AdminEvents/GetOne';
 
 const drawerWidth = 240;
 
@@ -104,9 +104,18 @@ export default function ResponsiveDrawer() {
             >
                 <Toolbar />
 
+          
                 {currentEvent === "MAIN" && <MainEvent />}
-                {currentEvent === "GET_USERS" && <GetUsers />}
-                {currentEvent === "GET_USER" && <GetUser />}
+                
+                {currentEvent === "GET_USER" && <GetOne type="users" />}
+                {currentEvent === "GET_USERS" && <GetMany type="users"/>}
+
+                {currentEvent === "GET_BALANCE" && <GetOne type="balance" />}
+                {currentEvent === "GET_BALANCES" && <GetMany type="balance"/>}
+
+                {currentEvent === "GET_TRANSACTION" && <GetOne type="transactions" />}
+                {currentEvent === "GET_TRANSACTIONS" && <GetMany type="transactions"/>}
+
             </Box>
         </Box>
     );

@@ -9,16 +9,16 @@ import Paper from '@mui/material/Paper';
 import { formatDate } from '../../formattingUtils';
 
 interface UserTableProps {
-    users: Array<{ [key: string]: any }>;
+    data: Array<{ [key: string]: any }>;
 }
 
-export default function UserTable({ users }: UserTableProps) {
-    if (users.length === 0) {
+export default function UserTable({ data }: UserTableProps) {
+    if (data.length === 0) {
         return <div>No data available</div>;
     }
 
     // Get the keys from the first user object for table headers
-    const headers = Object.keys(users[0]);
+    const headers = Object.keys(data[0]);
 
     return (
         <TableContainer component={Paper}>
@@ -31,7 +31,7 @@ export default function UserTable({ users }: UserTableProps) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {users.map((user, rowIndex) => (
+                    {data.map((user, rowIndex) => (
                         <TableRow
                             key={rowIndex}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

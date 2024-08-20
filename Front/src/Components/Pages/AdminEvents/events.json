@@ -13,5 +13,25 @@
         "text": "Get Users",
         "operation": "GET_USERS",
         "iconName": "People"
+    },
+    {
+        "text": "Get Balance",
+        "operation": "GET_BALANCE",
+        "iconName": "Money"
+    },
+    {
+        "text": "Get Balances",
+        "operation": "GET_BALANCES",
+        "iconName": "Money"
+    },
+    {
+        "text": "Get Transaction",
+        "operation": "GET_TRANSACTION",
+        "iconName": "Money"
+    },
+    {
+        "text": "Get Transactions",
+        "operation": "GET_TRANSACTIONS",
+        "iconName": "Money"
     }
 ]

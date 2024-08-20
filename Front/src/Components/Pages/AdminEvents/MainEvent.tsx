@@ -1,4 +1,3 @@
-import Button from "../../Utils/Button";
 
 export default function MainEvent() {
     return (

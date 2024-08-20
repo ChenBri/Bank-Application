@@ -3,14 +3,14 @@ import UserTable from "../../Utils/UserTable";
 import api from "../../../axiosUtils";
 import { useEffect, useState } from "react";
 
-export default function GetUsersEvent() {
+export default function GetMany({type} : any) {
 
-    const [users, setUsers] = useState([]);
+    const [data, setData] = useState([]);
 
-    async function getUsers() {
-        await api.get("/admin/users")
+    async function getData() {
+        await api.get(`/admin/${type}`)
             .then(function (response: any) {
-                setUsers(response.data.users);
+                setData(response.data[type]);
             })
             .catch(function (error) {
 
@@ -18,16 +18,16 @@ export default function GetUsersEvent() {
     }
 
     useEffect(() => {
-        getUsers();
+        getData();
     }, []);
 
 
 
     return (
         <>
-            <Button type="button" classes="btn btn-blue" method={getUsers} text="Refresh" />
+            <Button type="button" classes="btn btn-blue" method={getData} text="Refresh" />
 
-            <UserTable users={users} />
+            <UserTable data={data} />
         </>
     )
 }

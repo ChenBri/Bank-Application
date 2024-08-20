@@ -4,33 +4,24 @@ import api from "../../../axiosUtils";
 import { useRef, useState } from "react";
 import { TextField } from "@mui/material";
 
-// Define the user type
-interface User {
-    id: string;
-    createdAt: string;
-    updatedAt: string;
-    email: string;
-    phone: string;
-    is_activated: boolean;
-    role: string;
-}
 
-export default function GetUserEvent() {
-    const [users, setUsers] = useState<User[]>([]);
+
+export default function GetOne({type} : any) {
+    const [data, setData] = useState([]);
     let inputRef = useRef<HTMLInputElement>(null);
 
-    async function getUser() {
+    async function getData() {
         if (!inputRef.current) return;
 
         await api
-            .get(`/admin/users/${inputRef.current.value}`)
+            .get(`/admin/${type}/${inputRef.current.value}`)
             .then(function (response: any) {
                 const userResponse = response.data.user;
-                setUsers(userResponse ? userResponse : []);
+                setData(userResponse ? userResponse : []);
 
             })
             .catch(function (error) {
-                setUsers([]);
+                setData([]);
             });
     }
 
@@ -42,12 +33,12 @@ export default function GetUserEvent() {
                     label="User ID:"
                     variant="outlined"
                     inputRef={inputRef}
-                    onChange={getUser}
+                    onChange={getData}
                 />
-                <Button type="button" classes="btn btn-blue" method={getUser} text="Refresh" />
+                <Button type="button" classes="btn btn-blue" method={getData} text="Refresh" />
             </div>
 
-            <UserTable users={users} />
+            <UserTable data={data} />
         </>
     );
 }
