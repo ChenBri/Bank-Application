@@ -17,7 +17,7 @@ import { useState } from 'react';
 import MainEvent from './AdminEvents/MainEvent';
 import GetUsers from './AdminEvents/GetUsersEvent';
 import GetUser from './AdminEvents/GetUserEvent';
-import format from './../../formattingUtils';
+import {formatString} from './../../formattingUtils';
 import IconResolver from './AdminEvents/IconResolver';
 
 import events from './AdminEvents/events.json';
@@ -77,7 +77,7 @@ export default function ResponsiveDrawer() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        {format(currentEvent)}
+                        {formatString(currentEvent)}
                     </Typography>
                 </Toolbar>
             </AppBar>
