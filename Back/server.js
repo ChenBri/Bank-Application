@@ -57,7 +57,8 @@ app.use('/api/verify', require('./routes/api/verify'));
 // admin routes
 app.use('/api/admin/register', require('./routes/api/admin/register'));
 app.use('/api/admin/users', require('./routes/api/admin/users'));
-
+app.use('/api/admin/balance', require('./routes/api/admin/balance'));
+app.use('/api/admin/transactions', require('./routes/api/admin/transactions'));
 
 app.all('*', (req, res) => {
     res.status(404);

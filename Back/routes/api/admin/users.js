@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const router = express.Router();
 const getUsersController = require('../../../controllers/getUsersController');
 const verifyJWT = require('../../../middleware/verifyJWT');
@@ -12,3 +12,9 @@ router.route('/:userId')
     .get(verifyJWT, verifyRole('admin'), getUsersController.getById);
 
 module.exports = router;
+ */
+
+const Users = require('../../../model/Users');
+const createGenericRouter = require('./genericRouter');
+
+module.exports = createGenericRouter(Users);
