@@ -36,13 +36,16 @@ export default function GetUserEvent() {
 
     return (
         <>
-            <TextField
-                className="w-full mb-4"
-                label="User ID:"
-                variant="outlined"
-                inputRef={inputRef}
-                onChange={getUser}
-            />
+            <div className="flex flex-row gap-12  mb-4">
+                <TextField
+                    className="w-full"
+                    label="User ID:"
+                    variant="outlined"
+                    inputRef={inputRef}
+                    onChange={getUser}
+                />
+                <Button type="button" classes="btn btn-blue" method={getUser} text="Refresh" />
+            </div>
 
             <UserTable users={users} />
         </>
