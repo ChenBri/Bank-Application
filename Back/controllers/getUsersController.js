@@ -15,7 +15,7 @@ const getAll = async (req, res) => {
 const getById = async (req, res) => {
     try {
         const userId = req.params.userId;
-        const foundUser = await Users.find().sort({ _id: -1 }).skip(userId - 1).limit(1);
+        const foundUser = await Users.find().skip(userId - 1).limit(1);
 
         if (!foundUser || foundUser.length == 0) {
             return res.status(404).json({ error: `User with ID ${userId} not found` });
