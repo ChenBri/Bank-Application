@@ -6,14 +6,14 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: "chenbrilling1@gmail.com",
-        pass: "alpj daec mxnb umuq",
+        user: process.env.NODEMAILER_EMAIL,
+        pass: process.env.NODEMAILER_PASSWORD,
     },
 });
 
 const sendEmail = async function (email, code) {
     const mailOptions = {
-        from: "chenbrilling1@gmail.com",
+        from: process.env.NODEMAILER_EMAIL,
         to: email,
         subject: "Hello from Nodemailer",
         text: `Your code is: ${code}.`,
