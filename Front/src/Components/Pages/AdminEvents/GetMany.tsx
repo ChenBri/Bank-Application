@@ -3,32 +3,37 @@ import UserTable from "../../Utils/UserTable";
 import api from "../../../axiosUtils";
 import { useEffect, useState } from "react";
 
-export default function GetMany({type} : any) {
+interface GetManyProps {
+    type: string;
+}
 
-    const [data, setData] = useState([]);
+interface Data {
+    [key: string]: string | number | Date;
+}
+
+export default function GetMany({ type }: GetManyProps) {
+    const [data, setData] = useState<Data[]>([]);
 
     async function getData() {
         console.log("type: ", type);
-        await api.get(`/admin/${type}`)
-            .then(function (response: any) {
-                setData(response.data.data);
-            })
-            .catch(function (error) {
-
-            });
+        try {
+            const response = await api.get(`/admin/${type}`);
+            setData(response.data.data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     }
 
     useEffect(() => {
         getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-
     return (
-        
         <>
             <Button type="button" classes="btn btn-blue" method={getData} text="Refresh" />
 
-            { data !== undefined && <UserTable data={data} />}
+            {data.length > 0 && <UserTable data={data} />}
         </>
-    )
+    );
 }

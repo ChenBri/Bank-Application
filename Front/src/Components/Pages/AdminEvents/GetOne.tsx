@@ -5,31 +5,35 @@ import { useRef, useState } from "react";
 import { TextField } from "@mui/material";
 import { formatString } from "../../../formattingUtils";
 
+interface GetOneProps {
+    type: string;
+}
 
-export default function GetOne({type} : any) {
-    const [data, setData] = useState<any[]>([]);
-    let inputRef = useRef<HTMLInputElement>(null);
+interface Data {
+    [key: string]: string | number | Date;
+}
+
+export default function GetOne({ type }: GetOneProps) {
+    const [data, setData] = useState<Data[]>([]);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     async function getData() {
         if (!inputRef.current || inputRef.current.value === "") return;
-    
-        await api
-            .get(`/admin/${type}/${inputRef.current.value}`)
-            .then(function (response: any) {
-                const userResponse = response.data.data;
-    
-                // Check if userResponse is an object, if so, wrap it in an array
-                const formattedData = Array.isArray(userResponse) ? userResponse : [userResponse];
-                setData(formattedData);
-            })
-            .catch(function (error) {
-                setData([]);
-            });
+
+        try {
+            const response = await api.get(`/admin/${type}/${inputRef.current.value}`);
+            const userResponse = response.data.data;
+
+            const formattedData = Array.isArray(userResponse) ? userResponse : [userResponse];
+            setData(formattedData);
+        } catch (error) {
+            setData([]);
+        }
     }
 
     return (
         <>
-            <div className="flex flex-row gap-12  mb-4">
+            <div className="flex flex-row gap-12 mb-4">
                 <TextField
                     className="w-full"
                     label={`${formatString(type)} ID:`}

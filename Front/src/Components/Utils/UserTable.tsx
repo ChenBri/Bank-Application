@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,8 +7,13 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { formatDate } from '../../formattingUtils';
 
+
+interface User {
+    [key: string]: string | number | Date;
+}
+
 interface UserTableProps {
-    data: Array<{ [key: string]: any }>;
+    data: User[];
 }
 
 export default function UserTable({ data }: UserTableProps) {
@@ -19,7 +23,6 @@ export default function UserTable({ data }: UserTableProps) {
 
     console.log(data);
 
-    // Get the keys from the first user object for table headers
     const headers = Object.keys(data[0]);
 
     return (
@@ -41,7 +44,7 @@ export default function UserTable({ data }: UserTableProps) {
                             {headers.map((header) => (
                                 <TableCell key={header}>
                                     {header === 'createdAt' || header === 'updatedAt' 
-                                        ?  formatDate(user[header])
+                                        ? formatDate(user[header] as Date)
                                         : String(user[header]).substring(0, 25)}
                                 </TableCell>
                             ))}
