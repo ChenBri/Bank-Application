@@ -1,4 +1,3 @@
-
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -15,7 +14,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import MainEvent from './AdminEvents/MainEvent';
-import {formatString} from './../../formattingUtils';
+import { formatString } from './../../formattingUtils';
 import IconResolver from './AdminEvents/IconResolver';
 
 import events from './AdminEvents/events.json';
@@ -46,8 +45,8 @@ export default function ResponsiveDrawer() {
                     <ListItem key={text} disablePadding onClick={() => handleClick(operation)}>
                         <ListItemButton>
                             <ListItemIcon>
-                                  <IconResolver iconName={iconName} />
-                                </ListItemIcon>
+                                <IconResolver iconName={iconName} />
+                            </ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItemButton>
                     </ListItem>
@@ -55,6 +54,28 @@ export default function ResponsiveDrawer() {
             </List>
         </div>
     );
+
+
+
+    const event = () => {
+        switch (currentEvent) {
+            case "GET_USER":
+                return <GetOne type="users" />
+            case "GET_USERS":
+                return <GetMany type="users" />
+            case "GET_BALANCE":
+                return <GetOne type="balance" />
+            case "GET_BALANCES":
+                return <GetMany type="balance" />
+            case "GET_TRANSACTION":
+                return <GetOne type="transactions" />
+            case "GET_TRANSACTIONS":
+                return <GetMany type="transactions" />
+            case "MAIN":
+            default:
+                return <MainEvent />;
+        }
+    };
 
 
 
@@ -104,17 +125,8 @@ export default function ResponsiveDrawer() {
             >
                 <Toolbar />
 
-          
-                {currentEvent === "MAIN" && <MainEvent />}
-                
-                {currentEvent === "GET_USER" && <GetOne type="users" />}
-                {currentEvent === "GET_USERS" && <GetMany type="users"/>}
-
-                {currentEvent === "GET_BALANCE" && <GetOne type="balance" />}
-                {currentEvent === "GET_BALANCES" && <GetMany type="balance"/>}
-
-                {currentEvent === "GET_TRANSACTION" && <GetOne type="transactions" />}
-                {currentEvent === "GET_TRANSACTIONS" && <GetMany type="transactions"/>}
+                {/* Event Page */}
+                {event()}
 
             </Box>
         </Box>
